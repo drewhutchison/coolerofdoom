@@ -32,7 +32,7 @@ if upc[0] == '4':
 elif upc[0] in [str(i) for i in [0,1,6,7,8]]:
     
     user = f.get_user()
-    username = ((user.twitter_handle if user.twitter_handle
+    username = (('.@' + user.twitter_handle if user.twitter_handle
                  else user.name) if user
                 else 'Somebody')
     beveragename = f.get_beverage_description(upc)
