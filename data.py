@@ -98,6 +98,7 @@ class Beverage(object):
 class User(object):
     def __init__(self, tup):
         if type(tup) is tuple:
-            self.user_id, self.
+            ##self.user_id, self.
+            pass
     
 data = Data()
