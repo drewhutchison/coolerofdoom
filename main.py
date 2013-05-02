@@ -14,8 +14,21 @@ if upc[0] == '4':
     
     if upc[6] == '1':
         
+        # user ID card scanned
+        
         f.update_user(int(upc[-5:-1]))
         
+    if upc[6] == '2':
+        
+        # nullary command functions
+        
+        cmd_id = int(upc[-5:-1])
+        
+        if cmd_id == 1:
+            
+            from subprocess import call
+            call(['git', 'pull'])
+            
 elif upc[0] in [str(i) for i in [0,1,6,7,8]]:
     
     user = f.get_user()
