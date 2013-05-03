@@ -51,7 +51,7 @@ class Data(object):
         return self._getter(UPC_DATABASE_KEY)
     
     def get_beverage(self, upc):
-        self.c.execute('SELECT * FROM beverages WHERE upc = ?',
+        self.c.execute('SELECT (upc, description, untappd_id) FROM beverages WHERE upc = ?',
                        (upc,))
         ret = self.c.fetchone()
         return Beverage(ret) if ret else None
