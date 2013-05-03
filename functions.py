@@ -3,7 +3,7 @@ from json import loads
 
 from data import data
 
-SIMULATE_TWITTER = True
+SIMULATE_TWITTER = False
 
 class FakeTwitter(object):
     def PostUpdate(self, msg, **kwargs):
@@ -49,7 +49,7 @@ def get_beverage_description(upc):
     
 def get_user():
     
-    return None
+    return data.get_current_user()
 
 def update_user(user_id):
 

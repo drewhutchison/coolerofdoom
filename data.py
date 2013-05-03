@@ -84,6 +84,9 @@ class Data(object):
                           LIMIT 1
                           ''')
         
+        ret = self.c.fetchone()
+        if ret is not None: return User(ret)
+        
     def log_beverage(self, user, beverage):
         self.c.execute('''INSERT
                           INTO drinks(user_id, beverage_id, timestamp)
@@ -98,7 +101,6 @@ class Beverage(object):
 class User(object):
     def __init__(self, tup):
         if type(tup) is tuple:
-            ##self.user_id, self.
-            pass
+            self.user_id, self.name, self.email, self.last_seen, self.twitter_handle = tup
     
 data = Data()
